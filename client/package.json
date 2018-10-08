@@ -4,9 +4,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.4"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.4",
+    "styled-components": "^3.4.9"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -14,7 +17,7 @@
     "eject": "react-scripts eject",
     "dev": "concurrently \"nodemon bin/www\" \"cd ./client && npm start \" ",
     "test": "echo \"Error: no test specified\" && exit 1",
-                "postinstall": "cd client && npm install && npm run build"
+    "postinstall": "cd client && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,7 +28,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-"engines": {
-  "node": "8.6.0"
-} 
+  "engines": {
+    "node": "8.6.0"
+  }
 }

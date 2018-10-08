@@ -1,6 +1,6 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true})
 mongoose.Promise = global.Promise
 
 const { Car, User } = require('./model')
@@ -20,6 +20,6 @@ const diamonique = new User({
 })
 
 User.remove({})
-  .then(() => elon.save())
+  .then(() => diamonique.save())
   .then(() => console.log('Successful Save'))
   .then(() => mongoose.connection.close())

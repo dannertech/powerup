@@ -1,10 +1,25 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI, {useMongoClient:true})
+mongoose.connect(process.env.MONGODB_URI)
 mongoose.Promise = global.Promise
 
 const { Car, User } = require('./model')
 
-const diamonique = new User({
-    
+const bmw = new Car({
+    charge: 100,
+    make: "BMW",
+    model: "i8",
+    owner: "diamonique"
 })
+
+const diamonique = new User({
+    name: "diamonique",
+    username: "diamonique",
+    email: "danner@danner.tech",
+    cars: [bmw]
+})
+
+User.remove({})
+  .then(() => elon.save())
+  .then(() => console.log('Successful Save'))
+  .then(() => mongoose.connection.close())

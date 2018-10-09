@@ -13,6 +13,12 @@ color: white;
 display: flex;
 `;
 
+const Image = styled.div`
+margin: 180px 0px 0px 0px;
+
+`
+
+
 class App extends Component {
   render() {
     return (
@@ -22,8 +28,12 @@ class App extends Component {
    <div>
      <Link to='/signup'>Sign Up</Link>
      <Link to='/login'>Log In</Link>
+     <Image>
+     <img alt="Thunderbolt with Power On button" src={require('./images/power-button-off-image.png')}></img>
+  </Image>
      </div>
      <Switch>
+       
        <Route path="/signup" component={SignupPage} />
        <Route path="/login"  component={LoginPage} />
      </Switch>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import '../src/App.css'
+import { Link } from 'react-router-dom'
 
-const Body = styled.div`
+const Navigation = styled.div`
 background: black;
 cover: 100%;
 color: white;
@@ -11,9 +12,9 @@ color: white;
 class App extends Component {
   render() {
     return (
-   <Body>
-     This is my page now
-   </Body>
+   <Navigation>
+     <Link></Link>
+   </Navigation>
     );
   }
 }

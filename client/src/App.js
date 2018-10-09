@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import '../src/App.css'
-import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom'
-import SignupPage from './components/signupPage'
+import { BrowserRouter as Router, Switch, Route, Link  } from 'react-router-dom'
+import SignupPage from './components/signupPage/SignupPage'
 
 
 const Navigation = styled.div`

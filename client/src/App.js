@@ -14,8 +14,16 @@ class App extends Component {
   render() {
     return (
    <Navigation>
-     <Link>Login</Link>
-     <Link>Sign Up</Link>
+    <Router>
+
+   <div>
+     <Link to='/signup'>Sign Up</Link>
+     </div>
+     <Switch>
+       <Route path="/signup" component={SignupPage} />
+     </Switch>
+     </Router>
+     
    </Navigation>
     );
   }

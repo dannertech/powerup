@@ -8,3 +8,8 @@ body {
 img {
     height: 500px;
 }
+
+button {
+    background-color: transparent;
+   border: none;
+}

@@ -29,7 +29,9 @@ class App extends Component {
      <Link to='/signup'>Sign Up</Link>
      <Link to='/login'>Log In</Link>
      <Image>
+       <button>
      <img alt="Thunderbolt with Power On button" src={require('./images/power-button-off-image.png')}></img>
+     </button>
   </Image>
      </div>
      <Switch>

@@ -18,6 +18,13 @@ margin: 180px 0px 0px 0px;
 
 `
 
+const Links = styled.div`
+font-size: 38px;
+color: white;
+text-decoration: none;
+`
+
+
 
 class App extends Component {
   render() {
@@ -26,10 +33,12 @@ class App extends Component {
     <Router>
 <div>
    <div>
+     <Links>
      <Link to='/signup'>Sign Up</Link>
      <Link to='/login'>Log In</Link>
+     </Links>
      <Image>
-       <button>
+       <button onClick=''>
      <img alt="Thunderbolt with Power On button" src={require('./images/power-button-off-image.png')}></img>
      </button>
   </Image>

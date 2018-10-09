@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import 'styled-components' 
+import styled from 'styled-components';
+
+const Body = styled.div`
+background: black;
+`;
 
 class App extends Component {
   render() {
     return (
-   <div>
+   <Body>
      This is my page now
-   </div>
+   </Body>
     );
   }
 }

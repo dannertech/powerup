@@ -17,15 +17,16 @@ class App extends Component {
     return (
    <Navigation>
     <Router>
-
+<div>
    <div>
      <Link to='/signup'>Sign Up</Link>
      </div>
      <Switch>
        <Route path="/signup" component={SignupPage} />
      </Switch>
+     </div>
      </Router>
-     
+    
    </Navigation>
     );
   }

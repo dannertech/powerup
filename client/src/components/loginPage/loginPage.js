@@ -1,6 +1,22 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import styled from 'styled-components'
 
 export default class LoginPage extends Component {
+  state = {
+users: []
+  }
+
+  fetchUsers = async() => {
+    const response = await axios.get('/api/users')
+    const users = response.data
+    this.setState({users})
+  }
+
+  componentDidMount = async () => {
+    this.fetchUsers()
+  }
+  
   render() {
     return (
       <div>

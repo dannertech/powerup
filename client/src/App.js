@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import '../src/App.css'
 import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom'
+import SignupPage from './components/signupPage'
+
 
 const Navigation = styled.div`
 background: black;

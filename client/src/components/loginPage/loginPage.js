@@ -22,22 +22,23 @@ users: []
   render() {
     const usersList = this.state.users.map((user,i) => {
     return (
-      <div>
-        {usersList}
-        </div>
+      <div>{user.username}</div>
     )
   })
 return (
       <div>
         <h1>This is the login page</h1>
-        <div>
-          {usersList}
-        </div>
+        
         <h5>Select Your Account</h5>
-        <UsersList users={this.state.users}
-      //  fetchUsers={this.fetchUsers}
-        />
+        <div>
+        {usersList}
+        </div>
+       
+      
+   
+        
       </div>
+       //<UsersList users={this.state.users} /> 
     )
   }
 }

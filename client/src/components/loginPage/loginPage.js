@@ -8,6 +8,12 @@ const StyledLink = styled(Link)`
 text-decoration: none;
 `
 
+const Links = styled.div`
+font-size: 38px;
+color: white;
+text-decoration: none;
+`
+
 export default class LoginPage extends Component {
   state = {
 users: []
@@ -33,6 +39,11 @@ users: []
   })
 return (
       <div>
+          <div>
+              <Links>
+                <Link to='/signup'>Sign Up</Link>
+              </Links>
+            </div>
         <h1>This is the login page</h1>
         
         <h5>Select Your Account</h5>

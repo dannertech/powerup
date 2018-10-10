@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import SignupPage from './components/signupPage/SignupPage'
 import LoginPage from './components/loginPage/LoginPage'
 import HomePage from './components/homepage/Homepage'
+import Cars from './components/carsPage/CarsPage'
 
 const Navigation = styled.div`
 background: black;
@@ -26,16 +27,11 @@ class App extends Component {
       <Navigation>
         <Router>
           <div>
-            <div>
-              <Links>
-                <Link to='/signup'>Sign Up</Link>
-                <Link to='/login'>Log In</Link>
-              </Links>
-            </div>
             <Switch>
               <Route exact path='/' component={HomePage} />
               <Route path="/signup" component={SignupPage} />
               <Route path="/login" component={LoginPage} />
+              <Route exact path='/users/:userId' component={Cars} />
             </Switch>
           </div>
         </Router>

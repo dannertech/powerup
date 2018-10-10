@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+const { User } = require('../db/model')
+
 /* GET home page. */
-router.get('/', function(req, res) {
-  console.log("this is the users homepage showing all of the users");
+router.get('/', async (req, res) => {
+const users = await User.find()
+res.send(users)
 });
 
 module.exports = router;

@@ -6,6 +6,7 @@ import SignupPage from './components/signupPage/SignupPage'
 import LoginPage from './components/loginPage/LoginPage'
 import HomePage from './components/homepage/Homepage'
 import Cars from './components/carsPage/CarsPage'
+import User from './components/User'
 
 const Navigation = styled.div`
 background: black;
@@ -32,6 +33,7 @@ class App extends Component {
               <Route path="/signup" component={SignupPage} />
               <Route path="/login" component={LoginPage} />
               <Route exact path='/users/:userId/cars' component={Cars} />
+              <Route exact path='/users/:userId' component={User} />
             </Switch>
           </div>
         </Router>

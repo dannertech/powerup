@@ -23,7 +23,7 @@ users: []
       <div>
         <h1>This is the login page</h1>
         <h5>Select Your Account</h5>
-        <UsersList />
+        <UsersList users={this.state.users}/>
       </div>
     )
   }

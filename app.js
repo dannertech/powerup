@@ -21,6 +21,7 @@ const usersController = require('./routes/usersController')
 
 var app = express();
 
+app.use('/api/users', usersController)
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

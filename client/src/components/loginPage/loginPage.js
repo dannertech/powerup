@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import UsersList from '../UsersList';
+import { Link } from 'react-router-dom'
+
+const StyledLink = styled(Link)`
+text-decoration: none;
+`
 
 export default class LoginPage extends Component {
   state = {
@@ -22,7 +27,8 @@ users: []
   render() {
     const usersList = this.state.users.map((user,i) => {
     return (
-      <div>{user.username}</div>
+      <div>
+      <StyledLink to={`/users/${user._id}`} key={i}>Username: {user.username}</StyledLink></div>
     )
   })
 return (

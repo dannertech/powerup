@@ -8,6 +8,9 @@ background: white;
 `
 
 export default class User extends Component {
+  state = {
+    users: []
+  }
     deleteUser = async () => {
         const userId = this.props.match.params.userId
         await axios.delete(`/api/users/${userId}`)
@@ -16,9 +19,15 @@ export default class User extends Component {
      })
     }
 
+    handleChange = (event) => {
+const users = [...this.state.users]
+users[event.target.username] = event.target.value;
+this.setState({ users })
+    }
+
     updateUser = async () => {
       const userId = this.props.match.params.userId
-      
+      await axios.put(`/api/users/${userId}`)
     }
   render() {
     return (

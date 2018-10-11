@@ -60,6 +60,11 @@ this.setState({ users })
 <br></br>
 <label>{this.state.user.email}</label>
 
+<form>
+  <input type='text' name="username" value="New Username"></input> 
+  <br></br>
+  <input type='text' name="email" value="New Email"></input>
+  </form>
       </div>
     )
   }

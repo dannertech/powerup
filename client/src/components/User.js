@@ -15,6 +15,11 @@ export default class User extends Component {
 
      })
     }
+
+    updateUser = async () => {
+      const userId = this.props.match.params.userId
+      
+    }
   render() {
     return (
 
@@ -25,7 +30,10 @@ export default class User extends Component {
 <Button>
         <button onClick={this.deleteUser}>Delete Account</button>
         </Button>
-       
+       <form>
+         <input type='text' name="username" value={this.props.match.params.userId} />
+       </form>
+
       </div>
     )
   }

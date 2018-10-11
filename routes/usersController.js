@@ -17,8 +17,11 @@ const user = await User.findById(req.params.id)
 res.send(user)
 })
 
-router.post('/users', )
-
+router.post('/', async (req, res) => {
+    const user = await User.create(req.body)
+    res.send(user)
+  })
+  
 router.delete('/:id', async (req,res) => {
 await User.findByIdAndRemove(req.params.id)
 res.sendStatus(200)

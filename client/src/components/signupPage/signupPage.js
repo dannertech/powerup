@@ -31,7 +31,7 @@ export default class SignupPage extends Component {
     newUser[event.target.name] = event.target.value
     this.setState({ newUser })
   }
-r() {
+render() {
     return (
       <div>
           <div>
@@ -44,19 +44,19 @@ r() {
           <label>Name</label>
           <br>
           </br>
-          <input type='text' name='name' value="name"></input>
+          <input type='text' name='name' value="name" onChange={this.handleChange}></input>
           <br>
           </br>
           <label>Username</label>
           <br>
           </br>
-          <input type='text' name='username' value="username"></input>
+          <input type='text' name='username' value="username" onChange={this.handleChange}></input>
           <br>
           </br>
           <label>Email</label>
           <br>
           </br>
-          <input type='text' name='email' value='email'></input>
+          <input type='text' name='email' value='email' onChange={this.handleChange}></input>
           <br>
           </br>
           <input type="submit" value="Sign Up"></input>

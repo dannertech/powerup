@@ -12,14 +12,9 @@ const Navigation = styled.div`
 background: black;
 cover: 100%;
 color: white;
-display: flex;
+
 `
 
-const Links = styled.div`
-font-size: 38px;
-color: white;
-text-decoration: none;
-`
 
 
 class App extends Component {

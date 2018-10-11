@@ -26,17 +26,12 @@ export default class SignupPage extends Component {
     this.setState({ users: response.data })
   }
 
-  
-
-  changeHandler = (event) => {
+  handleChange = (event) => {
     const newUser = {...this.state.newUser}
-    const name = e.target.name
-    const username = e.target.username
-    const email = e.target.email
-
-
+    newUser[event.target.name] = event.target.value
+    this.setState({ newUser })
   }
-  render() {
+r() {
     return (
       <div>
           <div>
@@ -49,19 +44,22 @@ export default class SignupPage extends Component {
           <label>Name</label>
           <br>
           </br>
-          <input type='text' value="Name"></input>
+          <input type='text' name='name' value="name"></input>
           <br>
           </br>
           <label>Username</label>
           <br>
           </br>
-          <input type='text' value="Username"></input>
+          <input type='text' name='username' value="username"></input>
           <br>
           </br>
           <label>Email</label>
           <br>
           </br>
-          <input type='text' value='Email'></input>
+          <input type='text' name='email' value='email'></input>
+          <br>
+          </br>
+          <input type="submit" value="Sign Up"></input>
         </form>
 
       </div>

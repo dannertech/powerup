@@ -27,4 +27,10 @@ await User.findByIdAndRemove(req.params.id)
 res.sendStatus(200)
 })
 
+router.put('/:id', (req, res) => {
+  console.log(req.body)
+  User.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then( user => res.send(user))
+})
+
 module.exports = router;

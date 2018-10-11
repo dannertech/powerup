@@ -9,7 +9,13 @@ background: white;
 
 export default class User extends Component {
   state = {
-    user: {}
+    user: {},
+    users: []
+  }
+  handleSubmit = async (event) => {
+    event.preventDefault()
+    const response = await axios.put(`/api/users/${this.state.user._id}`, this.state.user)
+    // this.setState({  })  
   }
 
   getUser = async () => {
@@ -19,6 +25,11 @@ export default class User extends Component {
       user: response.data
     })
   }
+getUsers = async () => {
+  const response = await axios.get('/api/users')
+  this.setState({ users: response.data })
+}
+
     deleteUser = async () => {
         const userId = this.props.match.params.userId
         await axios.delete(`/api/users/${userId}`)
@@ -29,12 +40,13 @@ export default class User extends Component {
 
     componentDidMount = () => {
       this.getUser()
+      this.getUser()
     }
 
     handleChange = (event) => {
-const users = [...this.state.users]
-users[event.target.username] = event.target.value;
-this.setState({ users })
+const user = {...this.state.user}
+user[event.target.name] = event.target.value;
+this.setState({ user })
     }
 
     updateUser = async () => {
@@ -60,10 +72,12 @@ this.setState({ users })
 <br></br>
 <label>{this.state.user.email}</label>
 
-<form>
-  <input type='text' name="username" value="New Username"></input> 
+<form onSubmit={this.handleSubmit}>
+  <input type='text' name="username" onChange={this.handleChange}></input> 
   <br></br>
-  <input type='text' name="email" value="New Email"></input>
+  <input type='text' name="email" onChange={this.handleChange}></input>
+  <br></br>
+  <input type='submit'></input>
   </form>
       </div>
     )

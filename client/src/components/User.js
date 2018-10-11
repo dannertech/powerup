@@ -9,7 +9,15 @@ background: white;
 
 export default class User extends Component {
   state = {
-    users: []
+    user: {}
+  }
+
+  getUser = async () => {
+    const userId = this.props.match.params.userId
+    const response = await axios.get(`/api/users/${userId}`)
+    this.setState({
+      user: response.data
+    })
   }
     deleteUser = async () => {
         const userId = this.props.match.params.userId
@@ -17,6 +25,10 @@ export default class User extends Component {
      this.setState({
 
      })
+    }
+
+    componentDidMount = () => {
+      this.getUser()
     }
 
     handleChange = (event) => {
@@ -39,9 +51,14 @@ this.setState({ users })
 <Button>
         <button onClick={this.deleteUser}>Delete Account</button>
         </Button>
-       <form>
-         <input type='text' name="username" value={this.props.match.params.userId} />
-       </form>
+        <h1>Edit Your Details</h1>
+      <label>Current Username</label>
+      <br></br>
+      <label>{this.state.user.username}</label>
+      <br></br>
+<label>Current Email</label>
+<br></br>
+<label>{this.state.user.email}</label>
 
       </div>
     )

@@ -6,6 +6,13 @@ import styled from 'styled-components'
 const Button = styled.div`
 background: white;
 `
+const TitleDiv = styled.div`
+text-decoration: underline;
+`
+
+const StyledLink = styled.div`
+color: white;
+`
 
 export default class User extends Component {
   state = {
@@ -57,21 +64,26 @@ this.setState({ user })
     return (
 
       <div>
+        <TitleDiv>
         <h1>Welcome to Your Homepage</h1>
+        </TitleDiv>
+<StyledLink>
+        <Link class="page-link" to={`/users/${this.props.match.params.userId}/cars`}>Go to Your Cars</Link>
+        </StyledLink>
 
-        <Link to={`/users/${this.props.match.params.userId}/cars`}>Go to Your Cars</Link>
-<Button>
-        <button class='action-button' onClick={this.deleteUser}>Delete Account</button>
-        </Button>
         <h1>Edit Your Details</h1>
+        <br></br>
       <label>Current Username</label>
       <br></br>
+     
       <label>{this.state.user.username}</label>
+      <br></br>
       <br></br>
 <label>Current Email</label>
 <br></br>
 <label>{this.state.user.email}</label>
-
+<br></br>
+<br></br>
 <form onSubmit={this.handleSubmit}>
   <input type='text' name="username" onChange={this.handleChange}></input> 
   <br></br>
@@ -79,6 +91,11 @@ this.setState({ user })
   <br></br>
   <input type='submit'></input>
   </form>
+<br></br>
+<br></br>
+  <Button>
+        <button class='action-button' onClick={this.deleteUser}>Delete Account</button>
+        </Button>
       </div>
     )
   }

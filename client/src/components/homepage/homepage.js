@@ -11,11 +11,12 @@ justify-content: center;
 `
 
 const Links = styled.div`
-font-size: 40px;
+font-size: 20px;
 color: white;
 text-decoration: none;
 
 display: flex;
+flex-wrap: wrap;
 
 
 `
@@ -31,18 +32,18 @@ export default class Homepage extends Component {
         <div>
               <Links id="links">
            
-                <Link to='/signup'>Sign Up</Link>
+                <Link class="page-link" to='/signup'>Sign Up</Link>
                 
-              <hr></hr>
-              
-                <Link to='/login'>Log In</Link>
+             
+             <hr></hr>
+                <Link class="page-link" to='/login'>Log In</Link>
                
               </Links>
             </div>
 
         <Image>
           <img alt="Thunderbolt with Power On button"
-            src='/images/power-button-off-image.png' />
+            src='/images/power-button-on.png' />
         </Image>
       </div>
     )

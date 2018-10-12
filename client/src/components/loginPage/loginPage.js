@@ -8,14 +8,26 @@ const StyledLink = styled(Link)`
 text-decoration: none;
 `
 
+const UserListStyle = styled.div`
+color: black;
+`
+
 const Links = styled.div`
-font-size: 38px;
+font-size: 18px;
 color: white;
 text-decoration: none;
 `
 
 const LoginPageBody = styled.div`
 margin: 0 auto;
+`
+
+const UsersListDiv = styled.div`
+background: white;
+border-radius: 40px;
+color: black;
+
+
 `
 
 export default class LoginPage extends Component {
@@ -37,8 +49,8 @@ export default class LoginPage extends Component {
   render() {
     const usersList = this.state.users.map((user, i) => {
       return (
-        <div>
-          <StyledLink to={`/users/${user._id}`} key={i}>Username: {user.username}</StyledLink></div>
+        <UserListStyle>
+          <StyledLink to={`/users/${user._id}`} key={i}>Username: {user.username}</StyledLink></UserListStyle>
 
       )
     })
@@ -46,14 +58,15 @@ export default class LoginPage extends Component {
       <LoginPageBody id='pagebody'>
         <div>
           <Links>
-            <Link to='/signup'>Sign Up</Link>
+            <Link class='page-link' to='/signup'>Sign Up</Link>
           </Links>
         </div>
-        <h1>This is the login page</h1>
+        <h1>Login</h1>
 
-        <h5>Select Your Account</h5>
-        
-          {usersList}
+        <h5 id="select-account">Select Your Account</h5>
+        <UsersListDiv>
+         <div id="user-list"> {usersList}</div>
+          </UsersListDiv>
         
 
 

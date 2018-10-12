@@ -5,16 +5,18 @@ import axios from 'axios'
 
 
 const Links = styled.div`
-font-size: 38px;
+font-size: 18px;
 color: white;
 text-decoration: none;
 `
 
 const UserPageBody = styled.div`
-text-align: center;
+text-align: center; 
+
 `
 
 const Button = styled.div`
+
 height: 30px;
 width: 10px;
 `
@@ -55,7 +57,7 @@ render() {
       <UserPageBody>
           <div>
               <Links>
-                <Link to='/login'>Log In</Link>
+                <Link class="page-link" to='/login'>Log In</Link>
               </Links>
             </div>
         <h1>Sign Up</h1>
@@ -80,9 +82,10 @@ render() {
           </br>
           <input type="submit" value="Sign Up">
           </input>
-          <Button>
-       <img src='/images/continue-button.png' alt='continue button'/>
-       </Button>
+          <br></br>
+          <br></br>
+       <img class='continue-button' src='/images/continue-button.png' alt='continue button'/>
+     
         </form>
 
       </UserPageBody>

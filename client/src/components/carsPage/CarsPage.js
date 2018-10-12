@@ -15,16 +15,24 @@ this.setState({
 })
     }
 
+    deleteCar = async () => {
+const userId = this.props.match.params.userId
+//await axios.delete(`/api/users/${userId}/cars/${carsId}`)
+this.getUser()
+    }
+
     componentDidMount = () => {
         this.getUser()
     }
   render() {
       const carsList = this.state.cars.map((car, i) => {
           return (
-            <div>
+            <div key={i}>
               <h1>{car.make}</h1>
               
               <h2>{car.model}</h2>
+              
+              <button id="delete" onClick={this.handleDelete(car._id)}>Delete Car</button>
               </div>
           )
       })
@@ -32,7 +40,14 @@ this.setState({
       <div>
         <h1>These are your Cars</h1>
 <h5>{carsList}</h5>
+<h2>Add Car</h2>
+<form>
 
+<input type='text' name="make" value="make"></input>
+<br></br>
+<input type='text' name="model" value="model"></input>
+    
+</form>
       </div>
     )
   }

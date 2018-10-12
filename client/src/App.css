@@ -5,11 +5,43 @@ body {
    
 }
 
+#select-account{
+    text-decoration: underline;
+}
 
+#user-list{
+    text-decoration: none;
+   color: black;
+    padding: 0px;
+    margin: 0px;
+}
+.continue-button{
+display: inline-block;
+}
 
-
+.page-link {
+  text-decoration: none;
+  color: black;
+  margin: 0px 0px 0px 900px;
+   padding: 3px;
+   display: flex;
+ width: 70px;
+ background: white;
+border-radius: 45px;
+}
 
 button {
     background-color: transparent;
    border: none;
+}
+
+#delete{
+    background: white;
+    border-radius: 25px;
+}
+
+label {
+    background: white;
+    color: black;
+    border-radius: 25px;
 }

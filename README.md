@@ -1,7 +1,9 @@
-#Power Up Project
+# Power Up Project 
+_____________________
 This project was a step towards creating a fully-functional app that allows the user to keep track of their car's vital information.
 
-##Planning for the Project
+## Planning for the Project
+_______________________________
 I utilized Figma, RealtimeBoard and Trello to plan for the project.
 To view each of the tools that I implemented, you can access them via their respective links:
 [Trello](https://trello.com/b/fCPcIiAw/powerup)
@@ -10,19 +12,22 @@ To view each of the tools that I implemented, you can access them via their resp
 
 
 
-##Foundational Components
+## Foundational Components
+___________________________
 1. React
 2. Express
 3. MongoDB
 
 
-##Future Features
+## Future Features
+______________________
 I would like to include an API that allows the user to see charging stations that are available near them. I also want to ensure that is mobile-friendy.
 
 
 
 
-credits to:
+### credits to:
+_____________________
 montogeek for his answer in regards to running into an error that involves using the wrong path
 https://github.com/webpack/webpack/issues/6858
 

@@ -43,7 +43,7 @@ export default class Homepage extends Component {
 
         <Image>
           <img alt="Thunderbolt with Power On button"
-            src='/images/power-button-on.png' />
+            src='/images/bmw-i8-white.png' />
         </Image>
       </div>
     )

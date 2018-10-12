@@ -21,7 +21,11 @@ flex-wrap: wrap;
 
 `
 
+const Header = styled.div`
+font-weight: bold;
+font-size: 40px;
 
+`
 
 
 export default class Homepage extends Component {
@@ -45,6 +49,8 @@ export default class Homepage extends Component {
           <img alt="Thunderbolt with Power On button"
             src='/images/bmw-i8-white.png' />
         </Image>
+        <br></br>
+        <Header id="header">Power Up</Header>
       </div>
     )
   }

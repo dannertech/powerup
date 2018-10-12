@@ -36,8 +36,9 @@ button {
 }
 
 #delete{
-    background: white;
+    background: black;
     border-radius: 25px;
+    color: white;
 }
 
 label {

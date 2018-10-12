@@ -1,7 +1,19 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
+const StyledCard = styled.div`
+background: white;
+color: black;
+border-radius: 30px;
+margin: 0px;
+padding: 0px;
+`
+const Body = styled.div`
+text-align: center;
+
+`
 
 export default class Cars extends Component {
     state = {
@@ -27,22 +39,30 @@ export default class Cars extends Component {
     componentDidMount = () => {
         this.getUser()
     }
+
+    handleNew = async() => {
+        const userId = this.props.match.params.userId
+      await axios.post(`/api/users/${userId}/cars`)
+      await this.getUser()
+    }
     render() {
         const carsList = this.state.cars.map((car, i) => {
             return (
-                <div key={i}>
+                
+                <StyledCard key={i}>
+
                     <h1>{car.make}</h1>
 
                     <h2>{car.model}</h2>
 
                     <button id="delete" onClick={() => this.deleteCar(car._id)}>Delete Car</button>
 
-
-                </div>
+                    
+                </StyledCard>
             )
         })
         return (
-            <div>
+            <Body>
                 <h1>These are your Cars</h1>
                 <h5>{carsList}</h5>
                 <h2>Add Car</h2>
@@ -53,7 +73,7 @@ export default class Cars extends Component {
                     <input type='text' name="model" value="model"></input>
 
                 </form>
-            </div>
+            </Body>
         )
     }
 }

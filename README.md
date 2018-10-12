@@ -8,13 +8,16 @@ To view each of the tools that I implemented, you can access them via their resp
 [Figma](https://www.figma.com/file/ByfcQPiTDIZUuUKZt3Xafw8N/PowerUp?node-id=0%3A1)
 [RealtimeBoard](https://realtimeboard.com/app/board/o9J_kyiLAGc=/)
 
+
+
 ##Foundational Components
 1. React
 2. Express
 3. MongoDB
 
 
-
+##Future Features
+I would like to include an API that allows the user to see charging stations that are available near them. I also want to ensure that is mobile-friendy.
 
 
 

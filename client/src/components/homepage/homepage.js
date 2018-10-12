@@ -5,18 +5,20 @@ import { Link } from 'react-router-dom'
 
 const Image = styled.div`
 margin: 180px 0px 0px 0px;
+display: flex;
+align-content: center;
+justify-content: center;
 `
 
 const Links = styled.div`
-font-size: 38px;
+font-size: 40px;
 color: white;
 text-decoration: none;
+
 display: flex;
-justify-content: flex-end;
 
 
 `
-
 
 
 
@@ -25,12 +27,14 @@ export default class Homepage extends Component {
   render() {
     return (
       <div>
-        <h1>This is the homepage</h1>
+       
         <div>
               <Links id="links">
            
                 <Link to='/signup'>Sign Up</Link>
-               
+                
+              <hr></hr>
+              
                 <Link to='/login'>Log In</Link>
                
               </Links>

@@ -3,12 +3,21 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import axios from 'axios'
 
+
 const Links = styled.div`
 font-size: 38px;
 color: white;
 text-decoration: none;
 `
 
+const UserPageBody = styled.div`
+text-align: center;
+`
+
+const Button = styled.div`
+height: 30px;
+width: 10px;
+`
 export default class SignupPage extends Component {
   state = {
     users: [],
@@ -43,7 +52,7 @@ export default class SignupPage extends Component {
 
 render() {
     return (
-      <div>
+      <UserPageBody>
           <div>
               <Links>
                 <Link to='/login'>Log In</Link>
@@ -69,10 +78,14 @@ render() {
           <input type='text' name='email' value={this.state.newUser.email} onChange={this.handleChange}></input>
           <br>
           </br>
-          <input type="submit" value="Sign Up"></input>
+          <input type="submit" value="Sign Up">
+          </input>
+          <Button>
+       <img src='/images/continue-button.png' alt='continue button'/>
+       </Button>
         </form>
 
-      </div>
+      </UserPageBody>
     )
   }
 }

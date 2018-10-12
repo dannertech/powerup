@@ -1,13 +1,13 @@
 body {
     background: black;
-    
+    /* credit to John Kim */
+    text-align: center;
    
 }
 
-img {
-    height: 500px;
-   
-}
+
+
+
 
 button {
     background-color: transparent;

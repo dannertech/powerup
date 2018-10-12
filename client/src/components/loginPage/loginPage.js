@@ -14,6 +14,10 @@ color: white;
 text-decoration: none;
 `
 
+const LoginPageBody = styled.div`
+margin: 0 auto;
+`
+
 export default class LoginPage extends Component {
   state = {
     users: []
@@ -39,7 +43,7 @@ export default class LoginPage extends Component {
       )
     })
     return (
-      <div>
+      <LoginPageBody id='pagebody'>
         <div>
           <Links>
             <Link to='/signup'>Sign Up</Link>
@@ -48,14 +52,14 @@ export default class LoginPage extends Component {
         <h1>This is the login page</h1>
 
         <h5>Select Your Account</h5>
-        <div>
+        
           {usersList}
-        </div>
+        
 
 
 
 
-      </div>
+      </LoginPageBody>
       //<UsersList users={this.state.users} /> 
     )
   }

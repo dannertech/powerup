@@ -61,7 +61,7 @@ this.setState({ user })
 
         <Link to={`/users/${this.props.match.params.userId}/cars`}>Go to Your Cars</Link>
 <Button>
-        <button onClick={this.deleteUser}>Delete Account</button>
+        <button class='action-button' onClick={this.deleteUser}>Delete Account</button>
         </Button>
         <h1>Edit Your Details</h1>
       <label>Current Username</label>

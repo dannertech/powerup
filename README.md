@@ -12,6 +12,7 @@ To view each of the tools that I implemented, you can access them via their resp
 
 
 
+
 ## Foundational Components
 ___________________________
 1. React
@@ -22,6 +23,8 @@ ___________________________
 ## Future Features
 ______________________
 I would like to include an API that allows the user to see charging stations that are available near them. I also want to ensure that is mobile-friendy.
+
+## Here is a link to the final product
 
 
 

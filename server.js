@@ -21,13 +21,15 @@ const usersController = require('./routes/usersController')
 const carsController = require('./routes/carsController')
 
 var app = express();
-app.use('/api/users/:userId/cars', carsController)
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(__dirname + '/client/build/'));
+
+app.use('/api/users/:userId/cars', carsController)
+
+
 
 
 app.use('/api/users', usersController)

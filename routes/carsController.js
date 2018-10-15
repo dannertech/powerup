@@ -1,7 +1,14 @@
 const express = require('express')
 const { User } = require('../db/model')
+const { Car } = require('../db/model')
 const router = express.Router({ mergeParams: true})
 
+router.get('/', async (req, res) => {
+    const cars = await Car.find()
+    res.send(cars)
+    });
+    
+    
 
 router.get('/:carsId', (req,res) => {
     const carsId = req.params.carsId
@@ -14,6 +21,19 @@ router.get('/:carsId', (req,res) => {
         console.log(error)
     }) 
 
+})
+
+router.post('/', async (req,res) => {
+    console.log('CARS POST', req.body)
+    const newCar = new Car(req.body)
+    User.findById(req.params.userId)
+    .then((user) => {
+        user.cars.push(newCar)
+        return user.save()
+    })
+    .then((user) => {
+        res.send(user)
+    })
 })
 
 

@@ -18,7 +18,11 @@ text-align: center;
 export default class Cars extends Component {
     state = {
         user: {},
-        cars: []
+        cars: [],
+        newCar: {
+            make: '',
+            model: ''
+        }
     }
     getUser = async () => {
         const userId = this.props.match.params.userId
@@ -28,7 +32,16 @@ export default class Cars extends Component {
             cars: response.data.cars
         })
     }
+handleChange =  (event) => {
 
+const newCar = {...this.state.newCar}
+
+newCar[event.target.name] = event.target.value
+this.setState({ newCar })
+  /* const newCar = {...this.state.newCar}
+    newCar[event.target.name] = event.target.value
+    this.setState({ newCar }) */
+}
 
     deleteCar = async (carsId) => {
         const userId = this.props.match.params.userId
@@ -38,14 +51,20 @@ export default class Cars extends Component {
 
     componentDidMount = () => {
         this.getUser()
+
     }
 
     handleNew = async() => {
+       
         const userId = this.props.match.params.userId
-      await axios.post(`/api/users/${userId}/cars`)
-      await this.getUser()
+        const response = await axios.post(`/api/users/${userId}/cars`, this.state.newCar)
+    
+        const cars = [...this.state.cars]
+        cars.push(response.data)
+        this.setState({ cars })  
     }
     render() {
+       
         const carsList = this.state.cars.map((car, i) => {
             return (
                 
@@ -66,12 +85,13 @@ export default class Cars extends Component {
                 <h1>These are your Cars</h1>
                 <h5>{carsList}</h5>
                 <h2>Add Car</h2>
-                <form>
+                <form onSubmit={this.handleNew}>
 
-                    <input type='text' name="make" value="make"></input>
+                    <input type='text' name="make" value={this.state.newCar.make} onChange={this.handleChange}></input>
                     <br></br>
-                    <input type='text' name="model" value="model"></input>
-
+                    <input type='text' name="model" value={this.state.newCar.model} onChange={this.handleChange}></input>
+<br></br>
+<input type="submit" value="Submit"></input>
                 </form>
             </Body>
         )

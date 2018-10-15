@@ -47,7 +47,6 @@ getUsers = async () => {
 
     componentDidMount = () => {
       this.getUser()
-      this.getUser()
     }
 
     handleChange = (event) => {

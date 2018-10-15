@@ -37,4 +37,4 @@ https://stackoverflow.com/questions/22672368/how-to-make-a-transparent-html-butt
 how to add image using react
 https://stackoverflow.com/questions/34582405/react-wont-load-local-images
 
-John Kim, Daniel Pino, Andrew Bantug, Jamie King, Lauren Hemmingway, Qing, Emmy
+John Kim, Daniel Pino, Andrew Bantug, Jamie King, Lauren Hemmingway, Sasuke, Emmy 
